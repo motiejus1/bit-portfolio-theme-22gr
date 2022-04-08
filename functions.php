@@ -48,6 +48,10 @@ function bit_portfolio_enqueue () {
 
 add_action("wp_enqueue_scripts", "bit_portfolio_enqueue" );
 
+register_nav_menus(array(
+    "menu-1" => __("Primary Header Menu", 'bit-portfolio')
+));
+
 function bit_portfolio_move_to_footer_scripts() {
     remove_action('wp_head', 'wp_print_scripts'); //nespausdink man scriptu head'e
     remove_action('wp_head', 'wp_print_head_scripts', 9 );
@@ -61,3 +65,4 @@ function bit_portfolio_move_to_footer_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'bit_portfolio_move_to_footer_scripts');
+
